@@ -1,0 +1,2 @@
+include ':sample', ':preferencecell'
+project(':preferencecell').projectDir = new File('preferencecell')
