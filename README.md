@@ -1,4 +1,4 @@
-# PreferenceCell(previously [SYPreferenceUtils](https://github.com/SunnyLin2008/SYPreferenceUtils))
+# PreferenceCell (previously [SYPreferenceUtils](https://github.com/SunnyLin2008/SYPreferenceUtils))
 
 PreferenceCell is a simple Android Preference helper library base on SharePreferences. With PreferenceCell you can easily to write and read  data in simple code. You can even save the enum to SharePreferences with PreferenceCell.
 
