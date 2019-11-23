@@ -1,4 +1,4 @@
-# PreferenceCell
+# PreferenceCell(previously [SYPreferenceUtils](https://github.com/SunnyLin2008/SYPreferenceUtils))
 
 PreferenceCell is a simple Android Preference helper library base on SharePreferences. With PreferenceCell you can easily to write and read  data in simple code. You can even save the enum to SharePreferences with PreferenceCell.
 
@@ -7,18 +7,18 @@ PreferenceCell is a simple Android Preference helper library base on SharePrefer
 
 
 1.  Including in your project  with :
-    Copy  the [PreferenceUtil.java](https://github.com/SunnyLin2008/PreferenceCell/blob/master/preferencecell/src/main/java/com/sunnylin/preferencecell/PreferenceUtil.java) file into your project.
+    Copy  the [PreferenceCell](https://github.com/SunnyLin2008/PreferenceCell/blob/master/preferencecell/src/main/java/com/sunnylin/preferencecell/) folder into your project.
 2. Create a PreferenceManage class like [example](https://github.com/SunnyLin2008/PreferenceCell/blob/master/sample/src/main/java/com/example/sunnylin/preferencecell/PreferenceManage.java) and preference fields with the data type what will be write and read.
 ```java
-public final static PreferenceUtil<Boolean> BOOL_TYPE = new PreferenceUtil<>(true); //a bool value preference 
-public final static PreferenceUtil<String> STRING_TYPE = new PreferenceUtil<>(""); //a String value preference 
-public final static PreferenceUtil<Integer> INT_TYPE = new PreferenceUtil<>(2); //a int value preference 
-public final static PreferenceUtil<ExampleEnum> ENUM_TYPE = new PreferenceUtil<>(ExampleEnum.A); //a enum value that you declare and want to read and write to the preference.
+public final static PreferenceCell<Boolean> BOOL_TYPE = new PreferenceCell<>(true); //a bool value preference 
+public final static PreferenceCell<String> STRING_TYPE = new PreferenceCell<>(""); //a String value preference 
+public final static PreferenceCell<Integer> INT_TYPE = new PreferenceCell<>(2); //a int value preference 
+public final static PreferenceCell<ExampleEnum> ENUM_TYPE = new PreferenceCell<>(ExampleEnum.A); //a enum value that you declare and want to read and write to the preference.
 ```
 3. Add initial code to the PreferenceManage class file under the fields you had declared before :
 ```java
 static {
-  PreferenceUtil.init(ExampleApplication.getInstance(), PreferenceManage.class);
+  PreferenceCellBase.init(ExampleApplication.getInstance(), PreferenceManage.class);
 }
 ```
   ExampleApplication is your customer Application that like [example](https://github.com/SunnyLin2008/PreferenceCell/blob/master/sample/src/main/java/com/example/sunnylin/preferencecell/ExampleApplication.java)
