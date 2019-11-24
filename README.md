@@ -1,5 +1,6 @@
 # PreferenceCell (previously [SYPreferenceUtils](https://github.com/SunnyLin2008/SYPreferenceUtils))
 
+[![jcenter](https://img.shields.io/badge/jcenter-1.0-brightgreen)](https://bintray.com/beta/#/sunnylin/Maven/PreferenceCell?tab=overview)
 [![License](https://img.shields.io/badge/License-Apache%202-brightgreen)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 PreferenceCell is a simple Android Preference helper library base on SharePreferences, which can help you to declare, write or read prefernce data in only one line. With the PreferenceCell which can use the cache, went you will read data frequently, it can also substantially improved the speed of read data. You can even save the enum to SharePreferences with PreferenceCell.
@@ -15,7 +16,7 @@ PreferenceCell is a simple Android Preference helper library base on SharePrefer
     (Also you can only copy the [PreferenceCell](https://github.com/SunnyLin2008/PreferenceCell/blob/master/preferencecell/src/main/java/com/sunnylin/preferencecell/) folder into your project.
 2. Create a PreferenceManage class like [example](https://github.com/SunnyLin2008/PreferenceCell/blob/master/sample/src/main/java/com/example/sunnylin/preferencecell/PreferenceManage.java) and preference fields with the data type what will be write and read.
 ```java
-// Simple Type
+//Simple Type
 public final static PreferenceCell<Boolean> BOOL_TYPE = new PreferenceCell<>(true); //a bool value preference 
 public final static PreferenceCell<String> STRING_TYPE = new PreferenceCell<>(""); //a String value preference 
 public final static PreferenceCell<Integer> INT_TYPE = new PreferenceCell<>(2); //a int value preference 
@@ -36,7 +37,7 @@ static {
 
 ### Write
 ```java
-// Simple Type
+//Simple Type
 PreferenceManage.BOOL_TYPE.set(false);
 PreferenceManage.STRING_TYPE.set("Change the string");
 PreferenceManage.INT_TYPE.set(999);
@@ -47,23 +48,23 @@ PreferenceManage.MAP_INTEGER_TYPE.set(321, ExampleEnum.A]);
 ```
 ### Read
 ```java
-// Simple Type
+//Simple Type
 Boolean boolType = PreferenceManage.BOOL_TYPE.get();
 String stringType = PreferenceManage.STRING_TYPE.get();
 int intType = PreferenceManage.INT_TYPE.get();
 ExampleEnum enumType = PreferenceManage.ENUM_TYPE.get();
-// Map Type
+//Map Type
 PreferenceManage.MAP_ENUM_TYPE.get(ExampleEnum.B);
 PreferenceManage.MAP_INTEGER_TYPE.get(321);
  ```
  ### Reset
  ```java
- // Simple Type
+ //Simple Type
  PreferenceManage.BOOL_TYPE.reset();
  PreferenceManage.STRING_TYPE.reset();
  PreferenceManage.INT_TYPE.reset();
  PreferenceManage.ENUM_TYPE.reset();
- // Map Type
+ //Map Type
  PreferenceManage.MAP_ENUM_TYPE.reset(ExampleEnum.values());
  PreferenceManage.MAP_INTEGER_TYPE.reset(new Integer[]{[key range]});
   ```
