@@ -6,8 +6,11 @@ PreferenceCell is a simple Android Preference helper library base on SharePrefer
 ## Setup
 
 
-1.  Including in your project  with :
-    Copy  the [PreferenceCell](https://github.com/SunnyLin2008/PreferenceCell/blob/master/preferencecell/src/main/java/com/sunnylin/preferencecell/) folder into your project.
+1. Including in your project  with :
+    ```
+    implementation 'com.sunnylin2008:sypreferenceutils:1.2'
+    ```
+    (Also you can only copy the [PreferenceCell](https://github.com/SunnyLin2008/PreferenceCell/blob/master/preferencecell/src/main/java/com/sunnylin/preferencecell/) folder into your project.
 2. Create a PreferenceManage class like [example](https://github.com/SunnyLin2008/PreferenceCell/blob/master/sample/src/main/java/com/example/sunnylin/preferencecell/PreferenceManage.java) and preference fields with the data type what will be write and read.
 ```java
 public final static PreferenceCell<Boolean> BOOL_TYPE = new PreferenceCell<>(true); //a bool value preference 
