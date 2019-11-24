@@ -51,7 +51,7 @@ PreferenceManage.MAP_INTEGER_TYPE.set(321, ExampleEnum.A]);
 //Simple Type
 Boolean boolType = PreferenceManage.BOOL_TYPE.get();
 String stringType = PreferenceManage.STRING_TYPE.get();
-int intType = PreferenceManage.INT_TYPE.get();
+Integer intType = PreferenceManage.INT_TYPE.get();
 ExampleEnum enumType = PreferenceManage.ENUM_TYPE.get();
 //Map Type
 PreferenceManage.MAP_ENUM_TYPE.get(ExampleEnum.B);
