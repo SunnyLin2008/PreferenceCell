@@ -11,7 +11,7 @@ public class PreferenceManage {
     public final static PreferenceCell<Float> FLOAT_TYPE = new PreferenceCell<>(0.f);
     public final static PreferenceCell<String> STRING_TYPE = new PreferenceCell<>("Empty String");
     public final static PreferenceCell<ExampleEnum> ENUM_TYPE = new PreferenceCell<>(ExampleEnum.A);
-    public final static PreferenceMapCell<Integer, ExampleEnum> MAP_INTEGER_TYPE = new PreferenceMapCell<>(Integer.class, ExampleEnum.C);
+    public final static PreferenceMapCell<Integer, ExampleEnum> MAP_INTEGER_TYPE = new PreferenceMapCell<>(Integer.class, ExampleEnum.C, "IntTypeMap");
     public final static PreferenceMapCell<ExampleEnum,Integer> MAP_ENUM_TYPE = new PreferenceMapCell<>(ExampleEnum.class,0);
 
 

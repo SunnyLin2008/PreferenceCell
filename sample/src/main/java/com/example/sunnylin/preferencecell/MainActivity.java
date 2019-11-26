@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         ExampleEnum enumType = PreferenceManage.ENUM_TYPE.get();
         enumTextView.setText(enumType.toString());
         Random random =new Random();
-        ExampleEnum mapEnumType = PreferenceManage.MAP_INTEGER_TYPE.get(random.nextInt(10) % 2);
+        ExampleEnum mapEnumType = PreferenceManage.MAP_INTEGER_TYPE.get(random.nextInt(10));
         mapIntTextView.setText(mapEnumType.toString());
         Integer mapIntType = PreferenceManage.MAP_ENUM_TYPE.get(ExampleEnum.values()[random.nextInt(ExampleEnum.values().length)]);
         mapEnumTextView.setText(String.valueOf(mapIntType));
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         PreferenceManage.LONG_TYPE.set(random.nextLong());
         PreferenceManage.FLOAT_TYPE.set(random.nextFloat());
         PreferenceManage.ENUM_TYPE.set(ExampleEnum.values()[random.nextInt(ExampleEnum.values().length)]);
-        PreferenceManage.MAP_INTEGER_TYPE.set(random.nextInt(10) % 2, ExampleEnum.values()[random.nextInt(ExampleEnum.values().length)]);
+        PreferenceManage.MAP_INTEGER_TYPE.set(random.nextInt(10), ExampleEnum.values()[random.nextInt(ExampleEnum.values().length)]);
         PreferenceManage.MAP_ENUM_TYPE.set(ExampleEnum.values()[random.nextInt(ExampleEnum.values().length)],random.nextInt(99999));
         readValue();
     }
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         PreferenceManage.LONG_TYPE.reset();
         PreferenceManage.FLOAT_TYPE.reset();
         PreferenceManage.ENUM_TYPE.reset();
-        PreferenceManage.MAP_INTEGER_TYPE.reset(new Integer[]{0, 1});
+        PreferenceManage.MAP_INTEGER_TYPE.resetFile();
         PreferenceManage.MAP_ENUM_TYPE.reset(ExampleEnum.values());
         readValue();
     }

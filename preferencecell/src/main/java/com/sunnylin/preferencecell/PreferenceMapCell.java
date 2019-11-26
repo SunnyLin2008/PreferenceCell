@@ -1,5 +1,7 @@
 package com.sunnylin.preferencecell;
 
+import android.content.SharedPreferences;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +26,15 @@ public class PreferenceMapCell<K,V> extends PreferenceCellBase<V> {
         initType(defaultObject);
     }
 
+    public PreferenceMapCell(Class<K> keyClass, V defaultObject, String fileName) {
+        this(keyClass, defaultObject);
+        this.fileName = fileName;
+    }
+
+    public PreferenceMapCell(Map<K, V> mapDefaultObject, String fileName) {
+        this(mapDefaultObject);
+        this.fileName = fileName;
+    }
 
     public V get(K mapKey) {
         if (enableCache && mapCache != null) {
@@ -49,7 +60,7 @@ public class PreferenceMapCell<K,V> extends PreferenceCellBase<V> {
     }
 
     private String getMapKey(K mapKey) {
-        return getObjectKey() + mapKey;
+        return getObjectKey() + "_" + mapKey;
     }
 
     private V getDefaultObject(K key) {
@@ -66,6 +77,18 @@ public class PreferenceMapCell<K,V> extends PreferenceCellBase<V> {
         for (K k : keys) {
             set(k, getDefaultObject(k));
         }
+    }
+
+    /**
+     * Mark in reset <em>all</em> values from the file
+     * preferences. Make sure the file is only use in this Cell
+     * or you have disable the Cache of other cells which use the file also.
+     */
+    public void resetFile() {
+        SharedPreferences.Editor editor = getPreferences().edit();
+        editor.clear();
+        editor.commit();
+        cleanCache();
     }
 
     public void enableCache(Boolean enableCache) {
