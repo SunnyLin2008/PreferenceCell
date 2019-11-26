@@ -1,7 +1,7 @@
 # PreferenceCell 
 [English](./README.md) | 简体中文
 
-[![Download](https://img.shields.io/badge/Download-1.0-brightgreen)](https://bintray.com/beta/#/sunnylin/Maven/PreferenceCell?tab=overview)
+[![Download](https://img.shields.io/badge/Download-1.0-brightgreen)](https://bintray.com/sunnylin/Maven/PreferenceCell/1.1/link)
 [![License](https://img.shields.io/badge/License-Apache%202-brightgreen)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 PreferenceCell是一个基于SharePreferences的轻量Android Preference工具库。利用PreferenceCell您只需1行代码便可实现快速安全地构建Preference数据的读写。当您需要频繁地读取某个Preference数据时，PreferenceCell的缓存功能还能使二次读取时直接绕开io，让速度得到飞跃性的提高。另外PreferenceCell还实现了枚举类型和Map关联等功能。
@@ -11,7 +11,7 @@ PreferenceCell是一个基于SharePreferences的轻量Android Preference工具�
 
 1. 把下面的依赖设置添加到项目的dependencies里:
 ```
-  implementation 'com.sunnylin2008:preferencecell:1.0'
+  implementation 'com.sunnylin2008:preferencecell:1.1'
 ```
 
   (如果需要修改库的代码或者不喜欢添加依赖，您可以直接把[PreferenceCell](https://github.com/SunnyLin2008/PreferenceCell/blob/master/preferencecell/src/main/java/com/sunnylin/preferencecell/) 文件夹直接添加到您的项目里.)
