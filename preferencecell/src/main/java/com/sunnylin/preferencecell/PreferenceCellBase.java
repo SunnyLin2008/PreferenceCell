@@ -12,8 +12,8 @@ public abstract class PreferenceCellBase<V> {
     protected static Context context;
     protected SharedPreferences preferences;
 
-    enum PreferencesType {
-        BOOL, INT, STRING, ENUM
+    protected enum PreferencesType {
+        BOOL, INT, LONG, FLOAT, STRING, ENUM
     }
 
     protected static String defaultFileName = null;
@@ -23,7 +23,7 @@ public abstract class PreferenceCellBase<V> {
     /**
      * The key of the preference object.
      */
-    protected String objectKey = null;
+    protected String objectKey = "";
     protected PreferencesType type;
     protected Boolean enableCache = true;
     protected boolean useKeyAsFileName = false;
@@ -39,8 +39,14 @@ public abstract class PreferenceCellBase<V> {
             type = PreferencesType.BOOL;
         } else if (object instanceof Integer) {
             type = PreferencesType.INT;
+        } else if (object instanceof Long) {
+            type = PreferencesType.LONG;
+        } else if (object instanceof Float) {
+            type = PreferencesType.FLOAT;
         } else if (object instanceof String) {
             type = PreferencesType.STRING;
+        } else {
+            throw new ClassCastException("PreferenceCell is support only to save the value which is the type of Boolean, Int, Long, Float, String or Enum, Please check the type what you to save again.");
         }
     }
 
@@ -54,6 +60,12 @@ public abstract class PreferenceCellBase<V> {
                 break;
             case INT:
                 retObject = preferences.getInt(key, (Integer) defaultObject);
+                break;
+            case LONG:
+                retObject = preferences.getLong(key, (Long) defaultObject);
+                break;
+            case FLOAT:
+                retObject = preferences.getFloat(key, (Float) defaultObject);
                 break;
             case STRING:
                 retObject = preferences.getString(key, (String) defaultObject);
@@ -85,6 +97,12 @@ public abstract class PreferenceCellBase<V> {
                 break;
             case INT:
                 preferencesEditor.putInt(key, (Integer) object);
+                break;
+            case LONG:
+                preferencesEditor.putLong(key, (Long) object);
+                break;
+            case FLOAT:
+                preferencesEditor.putFloat(key, (Float) object);
                 break;
             case STRING:
                 preferencesEditor.putString(key, (String) object);

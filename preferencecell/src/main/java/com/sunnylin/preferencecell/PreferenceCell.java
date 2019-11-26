@@ -11,7 +11,6 @@ public class PreferenceCell<V> extends PreferenceCellBase<V> {
         this(defaultObject, "");
     }
 
-
     public PreferenceCell(V defaultObject, String key) {
         this.defaultObject = defaultObject;
         this.objectKey = key;
