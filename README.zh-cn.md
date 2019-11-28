@@ -15,8 +15,7 @@ PreferenceCell是一个基于SharePreferences的轻量Android Preference工具�
   (如果需要修改库的代码或者不喜欢添加依赖，您可以直接把[PreferenceCell](https://github.com/SunnyLin2008/PreferenceCell/blob/master/preferencecell/src/main/java/com/sunnylin/preferencecell/) 文件夹直接添加到您的项目里.)
 
 ## 初始化
-### 定义变量
-如[example](https://github.com/SunnyLin2008/PreferenceCell/blob/master/sample/src/main/java/com/example/sunnylin/preferencecell/PreferenceManage.java)一样创建一个PreferenceManage管理类(如果不喜欢管理类或者只有一两个数据，可以自行选择不添加)，并参考下面代码定义好您需要用到的Preference数据。
+1. 如[example](https://github.com/SunnyLin2008/PreferenceCell/blob/master/sample/src/main/java/com/example/sunnylin/preferencecell/PreferenceManage.java)一样创建一个PreferenceManage管理类(如果不喜欢管理类或者只有一两个数据，可以自行选择不添加)，并参考下面代码定义好您需要用到的Preference数据。
 ```java
 //Simple Type
 public final static PreferenceCell<Boolean> BOOL_TYPE = new PreferenceCell<>(true); //a bool value preference 
@@ -27,8 +26,7 @@ public final static PreferenceCell<ExampleEnum> ENUM_TYPE = new PreferenceCell<>
 public final static PreferenceMapCell<Integer, ExampleEnum> MAP_INTEGER_TYPE = new PreferenceMapCell<>(Integer.class, ExampleEnum.C); //a map enum value with int key preference 
 public final static PreferenceMapCell<ExampleEnum,Integer> MAP_ENUM_TYPE = new PreferenceMapCell<>(ExampleEnum.class,0);//a map int value with enum key preference 
 ```
-### 初始化变量
-参照如下代码在PreferenceManage中添加自动初始化指令（如需手动一个个初始化，可略过这一步）:
+2. 参照如下代码在PreferenceManage中添加自动初始化指令（如需手动一个个初始化，可略过这一步）:
 ```java
 static {
   PreferenceCellBase.init(ExampleApplication.getInstance(), PreferenceManage.class);
