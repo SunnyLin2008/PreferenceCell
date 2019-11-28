@@ -7,16 +7,17 @@ English | [简体中文](./README.zh-cn.md)
 PreferenceCell is a simple Android Preference helper library base on SharePreferences which can help you to declare, write or read prefernce data in only one line. With the PreferenceCell which can use the cache, went you will read data frequently, it can also substantially improved the speed of read data. You can even save the enum to SharePreferences with PreferenceCell.
 
 
-## Setup
+## Installation
 
-
-1. Including in your project  with :
+Including in your app level build.gradle with :
 ```
   implementation 'com.sunnylin2008:preferencecell:1.1'
 ```
   (You can also only copy the [PreferenceCell](https://github.com/SunnyLin2008/PreferenceCell/blob/master/preferencecell/src/main/java/com/sunnylin/preferencecell/) folder into your project.)
 
-2. Create a PreferenceManage class like [example](https://github.com/SunnyLin2008/PreferenceCell/blob/master/sample/src/main/java/com/example/sunnylin/preferencecell/PreferenceManage.java) and declare preference fields with the data type what will be write and read like below.
+
+## Initialization
+1. Create a PreferenceManage class like [example](https://github.com/SunnyLin2008/PreferenceCell/blob/master/sample/src/main/java/com/example/sunnylin/preferencecell/PreferenceManage.java) and declare preference fields with the data type what will be write and read like below.
 ```java
 //Simple Type
 public final static PreferenceCell<Boolean> BOOL_TYPE = new PreferenceCell<>(true); //a bool value preference 
@@ -27,7 +28,7 @@ public final static PreferenceCell<ExampleEnum> ENUM_TYPE = new PreferenceCell<>
 public final static PreferenceMapCell<Integer, ExampleEnum> MAP_INTEGER_TYPE = new PreferenceMapCell<>(Integer.class, ExampleEnum.C); //a map enum value with int key preference 
 public final static PreferenceMapCell<ExampleEnum,Integer> MAP_ENUM_TYPE = new PreferenceMapCell<>(ExampleEnum.class,0);//a map int value with enum key preference 
 ```
-3. Add initial code to the PreferenceManage class file under the fields you had declared before :
+2. Add initial code to the PreferenceManage class file under the fields you had declared before :
 ```java
 static {
   PreferenceCellBase.init(ExampleApplication.getInstance(), PreferenceManage.class);
@@ -35,7 +36,7 @@ static {
 ```
   ExampleApplication is your customer Application that like [example](https://github.com/SunnyLin2008/PreferenceCell/blob/master/sample/src/main/java/com/example/sunnylin/preferencecell/ExampleApplication.java)
 
-## How to use
+## Basic Usage
 
 ### Write
 ```java
