@@ -6,17 +6,17 @@
 
 PreferenceCell是一个基于SharePreferences的轻量Android Preference工具库。利用PreferenceCell您只需1行代码便可实现快速安全地构建Preference数据的读写。当您需要频繁地读取某个Preference数据时，PreferenceCell的缓存功能还能使二次读取时直接绕开io，让速度得到飞跃性的提高。另外PreferenceCell还实现了枚举类型和Map关联等功能。
 
-## 安装/初始化
-
-
-1. 把下面的依赖设置添加到项目的dependencies里:
+## 安装
+把下面的依赖设置添加到项目的dependencies里:
 ```
   implementation 'com.sunnylin2008:preferencecell:1.1'
 ```
 
   (如果需要修改库的代码或者不喜欢添加依赖，您可以直接把[PreferenceCell](https://github.com/SunnyLin2008/PreferenceCell/blob/master/preferencecell/src/main/java/com/sunnylin/preferencecell/) 文件夹直接添加到您的项目里.)
 
-2. 如[example](https://github.com/SunnyLin2008/PreferenceCell/blob/master/sample/src/main/java/com/example/sunnylin/preferencecell/PreferenceManage.java)一样创建一个PreferenceManage管理类(如果不喜欢管理类或者只有一两个数据，可以自行选择不添加)，并参考下面代码定义好您需要用到的Preference数据。
+## 初始化
+### 定义变量
+如[example](https://github.com/SunnyLin2008/PreferenceCell/blob/master/sample/src/main/java/com/example/sunnylin/preferencecell/PreferenceManage.java)一样创建一个PreferenceManage管理类(如果不喜欢管理类或者只有一两个数据，可以自行选择不添加)，并参考下面代码定义好您需要用到的Preference数据。
 ```java
 //Simple Type
 public final static PreferenceCell<Boolean> BOOL_TYPE = new PreferenceCell<>(true); //a bool value preference 
@@ -27,7 +27,8 @@ public final static PreferenceCell<ExampleEnum> ENUM_TYPE = new PreferenceCell<>
 public final static PreferenceMapCell<Integer, ExampleEnum> MAP_INTEGER_TYPE = new PreferenceMapCell<>(Integer.class, ExampleEnum.C); //a map enum value with int key preference 
 public final static PreferenceMapCell<ExampleEnum,Integer> MAP_ENUM_TYPE = new PreferenceMapCell<>(ExampleEnum.class,0);//a map int value with enum key preference 
 ```
-3. 参照如下代码在PreferenceManage中添加自动初始化指令（如需手动一个个初始化，可略过这一步）:
+### 初始化变量
+参照如下代码在PreferenceManage中添加自动初始化指令（如需手动一个个初始化，可略过这一步）:
 ```java
 static {
   PreferenceCellBase.init(ExampleApplication.getInstance(), PreferenceManage.class);
