@@ -1,5 +1,5 @@
 # PreferenceCell (previously [SYPreferenceUtils](https://github.com/SunnyLin2008/SYPreferenceUtils))
-English | [简体中文](./README.zh-cn.md)
+English | [简体中文](./README.zh-cn.md) | [日本語](./README.ja.md) 
 
 [![Download](https://img.shields.io/badge/Download-1.1-brightgreen)](https://bintray.com/sunnylin/Maven/PreferenceCell/1.1/link)
 [![License](https://img.shields.io/badge/License-Apache%202-brightgreen)](https://www.apache.org/licenses/LICENSE-2.0.html)
