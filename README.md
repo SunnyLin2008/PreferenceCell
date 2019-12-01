@@ -83,7 +83,7 @@ PreferenceManage.MAP_INTEGER_TYPE.get(321);
   ```java
   void enableCache(Boolean enableCache)
   ```
- ### Use with prefix
+ ### Add key prefix
  ```java
  PreferenceCellBase.setPrefix("Your prefix");
  ```
