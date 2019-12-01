@@ -35,7 +35,7 @@ static {
 ```
    (ExampleApplicationは[example](https://github.com/SunnyLin2008/PreferenceCell/blob/master/sample/src/main/java/com/example/sunnylin/preferencecell/ExampleApplication.java)様なカスタマイズアプリケーションクラスです)
 
-## 基本な使い方
+## 基本的な使い方
 
 ### 書き込み
 ```java
