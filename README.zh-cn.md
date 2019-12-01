@@ -21,6 +21,8 @@ PreferenceCell是一个基于SharePreferences的轻量Android Preference工具�
 public final static PreferenceCell<Boolean> BOOL_TYPE = new PreferenceCell<>(true); //a bool value preference 
 public final static PreferenceCell<String> STRING_TYPE = new PreferenceCell<>(""); //a String value preference 
 public final static PreferenceCell<Integer> INT_TYPE = new PreferenceCell<>(2); //a int value preference 
+public final static PreferenceCell<Long> LONG_TYPE = new PreferenceCell<>(0L);//a long value preference 
+public final static PreferenceCell<Float> FLOAT_TYPE = new PreferenceCell<>(0.f);//a float value preference 
 public final static PreferenceCell<ExampleEnum> ENUM_TYPE = new PreferenceCell<>(ExampleEnum.A); //a enum value that you declare and want to read and write to the preference.
 //Map Type
 public final static PreferenceMapCell<Integer, ExampleEnum> MAP_INTEGER_TYPE = new PreferenceMapCell<>(Integer.class, ExampleEnum.C); //a map enum value with int key preference 
@@ -42,6 +44,8 @@ static {
 PreferenceManage.BOOL_TYPE.set(false);
 PreferenceManage.STRING_TYPE.set("Change the string");
 PreferenceManage.INT_TYPE.set(999);
+PreferenceManage.LONG_TYPE.set(0L);
+PreferenceManage.FLOAT_TYPE.set(0.f);
 PreferenceManage.ENUM_TYPE.set(ExampleEnum.B);
 //Map Type
 PreferenceManage.MAP_ENUM_TYPE.set(ExampleEnum.B,123);
@@ -53,6 +57,8 @@ PreferenceManage.MAP_INTEGER_TYPE.set(321, ExampleEnum.A]);
 Boolean boolType = PreferenceManage.BOOL_TYPE.get();
 String stringType = PreferenceManage.STRING_TYPE.get();
 Integer intType = PreferenceManage.INT_TYPE.get();
+Long longType = PreferenceManage.LONG_TYPE.get();
+Float floatType = PreferenceManage.FLOAT_TYPE.get();
 ExampleEnum enumType = PreferenceManage.ENUM_TYPE.get();
 //Map Type
 PreferenceManage.MAP_ENUM_TYPE.get(ExampleEnum.B);
@@ -64,6 +70,8 @@ PreferenceManage.MAP_INTEGER_TYPE.get(321);
  PreferenceManage.BOOL_TYPE.reset();
  PreferenceManage.STRING_TYPE.reset();
  PreferenceManage.INT_TYPE.reset();
+ PreferenceManage.LONG_TYPE.reset();
+ PreferenceManage.FLOAT_TYPE.reset();
  PreferenceManage.ENUM_TYPE.reset();
  //Map Type
  PreferenceManage.MAP_ENUM_TYPE.reset(ExampleEnum.values());
